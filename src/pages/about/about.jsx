@@ -14,10 +14,13 @@ import SearchBack from '../../components/search-back/search-back'
 import AboutCard from '../../components/hero/cards/about-card'
 import OrganiCard from '../../components/hero/cards/organic-card'
 import OfferCard from '../../components/hero/cards/offer-card'
+import { Header } from '../../components/header/header'
+import { Footer } from '../../components/footer/footer'
 
 export const About = () => {
     return (
         <>
+        <Header/>
             <section>
                 <div>
                     {dataBack1.map((item) => <Back key={item.id} img={item.img} text={item.text} />)}
@@ -140,6 +143,7 @@ export const About = () => {
                     <SearchBack />
                 </div>
             </section>
+            <Footer/>
         </>
     )
 }

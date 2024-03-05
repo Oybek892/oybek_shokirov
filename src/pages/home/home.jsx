@@ -19,12 +19,14 @@ import Icon4 from '../../assets/icons/icon4'
 import SearchBack from '../../components/search-back/search-back'
 import HeroContent from '../../components/hero-content/hero-content'
 import HeroBack from '../../components/hero-back/hero-back'
-import { Link } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import Aos from 'aos'
 import "aos/dist/aos.css"
 
 
 export const Home = () => {
+    const params = useParams();
+    const product = dataCard.find((obj) => obj.id === Number(params.slug));
     useEffect(() => {
         Aos.init();
     }, [])
@@ -99,11 +101,13 @@ export const Home = () => {
                     <div className='container'>
                         <div>
                             <div className='grid grid-cols-4 grid-rows-2 gap-4 pt-8' data-aos="fade-right" >
-                                {dataCard.map((item) =>
+                                {/* {dataCard.map((item) =>
                                     <Link key={item.id} to="/shopmore">
                                         <Card text={item.text} img={item.img} title={item.title} price1={item.price1} price2={item.price2} img1={item.img1} />
                                     </Link>
-                                )}
+                                )} */}
+                        {dataCard.map((item) => <Link key={item.id} to={`/shopmore/${item.id}`}><Card  text={item.text} img={item.img} title={item.title} price1={item.price1} price2={item.price2} img1={item.img1} /></Link>)}
+
                             </div>
                         </div>
                         <div>

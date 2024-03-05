@@ -4,10 +4,13 @@ import Back from '../../components/back/back'
 import SearchBack from '../../components/search-back/search-back'
 import Card from '../../components/hero/cards/card'
 import { Link } from 'react-router-dom'
+import { Header } from '../../components/header/header'
+import { Footer } from '../../components/footer/footer'
 
 const Shop = () => {
     return (
         <>
+        <Header/>
             <section>
                 <div>
                     <div className='py-[50px] pb-16'>
@@ -27,6 +30,7 @@ const Shop = () => {
                     <SearchBack />
                 </div>
             </section>
+            <Footer/>
         </>
     )
 }
